@@ -11,6 +11,12 @@
   "dependencies": {
     "ember-cli-htmlbars": "*",
     "ember-cli-babel": "*",
-    "common-components": "link:../common-components"
-  }
+    "common-components": "link:../common-components",
+    "snyk": "^1.316.1"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
