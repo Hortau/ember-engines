@@ -22,7 +22,9 @@
     "test:node:debug": "mocha --inspect-brk 'node-tests/**/*-test.js' --reporter tap",
     "test:windows": "ember try:one %EMBER_TRY_SCENARIO% test --skip-cleanup",
     "test:node:dev": "BUILD_DEV=true testem -f testem-node.js",
-    "test:null": "echo 'no appropriate changes detected, not running tests'"
+    "test:null": "echo 'no appropriate changes detected, not running tests'",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -98,12 +100,14 @@
     "ember-cli-preprocess-registry": "^3.3.0",
     "ember-cli-string-utils": "^1.1.0",
     "ember-cli-version-checker": "^3.1.3",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "snyk": "^1.316.1"
   },
   "engines": {
     "node": "8.* || 10.* || >= 12.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "snyk": true
 }
